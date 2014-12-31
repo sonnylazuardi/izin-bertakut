@@ -1,0 +1,124 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:400,900,300,700);
+body {
+    background-color: #ebe6e0;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    font-family: 'Lato', Arial, sans-serif;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Lato', Arial, sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+nav li a {
+    font-family: 'Lato', Arial, sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #222b2d;
+}
+
+.nav-pills > li.active > a {
+    background-color: #222b2d;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+/* Custom page header */
+.header {
+    border-bottom: 1px solid #e5e5e5;
+}
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+    padding-bottom: 19px;
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 40px;
+}
+
+/* Custom page footer */
+.footer {
+    padding-top: 19px;
+    color: #777;
+    border-top: 1px solid #e5e5e5;
+}
+
+/* Customize container */
+@media (min-width: 768px) {
+    .container {
+        max-width: 730px;
+    }
+}
+.container-narrow > hr {
+    margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+    text-align: center;
+    border-bottom: 1px solid #e5e5e5;
+    background: #222b2d;
+    color: #fff;
+}
+.jumbotron .btn {
+    padding: 14px 24px;
+    font-size: 21px;
+}
+
+/* Supporting marketing content */
+.marketing {
+    margin: 40px 0;
+}
+.marketing p + h4 {
+    margin-top: 28px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    /* Remove the padding we set earlier */
+    .header,
+    .marketing,
+    .footer {
+        padding-right: 0;
+        padding-left: 0;
+    }
+    /* Space out the masthead */
+    .header {
+        margin-bottom: 30px;
+    }
+    /* Remove the bottom border on the jumbotron for visual effect */
+    .jumbotron {
+        border-bottom: 0;
+    }
+}
+
+/*  =======   */
+
+.logo {
+    background: url('../img/logo.png') no-repeat;
+    width: 408px;
+    height: 79px;
+    margin: 0 auto;
+}
+
+.logo-head {
+    background: url('../img/logo-small.png') no-repeat;
+    background-size: contain;
+    width: 50px;
+    height: 50px;
+}
+
+h4 i {
+    margin-right: 10px;
+}
+
+.marketing p {
+    margin-bottom: 50px;
+}
