@@ -105,7 +105,9 @@ nav li a {
     background: url('../img/logo.png') no-repeat;
     width: 408px;
     height: 79px;
+    background-size: contain;
     margin: 0 auto;
+    max-width: 100%;
 }
 
 .logo-head {
@@ -121,4 +123,8 @@ h4 i {
 
 .marketing p {
     margin-bottom: 50px;
+}
+
+.about img {
+    width: 100%;
 }

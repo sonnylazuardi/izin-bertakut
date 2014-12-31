@@ -24,48 +24,23 @@
     <![endif]-->
   </head>
 
-  <body>
+  <body ng-app="BertakutApp">
 
-    <div class="container">
+    <div class="container" ng-controller="MenuCtrl">
       <div class="header">
         <nav>
           <ul class="nav nav-pills pull-right">
-            <li role="presentation" class="active"><a href="#">Home</a></li>
-            <li role="presentation"><a href="#">Honors</a></li>
-            <li role="presentation"><a href="#">About</a></li>
+            <li role="presentation" ng-hide="user"><a href ui-sref="home">Home</a></li>
+            <li role="presentation" ng-show="user"><a href ui-sref="dashboard">Dashboard</a></li>
+            <li role="presentation" ng-show="user"><a href ng-click="logout()">Logout</a></li>
+            <li role="presentation"><a href ui-sref="honor">Honors</a></li>
+            <li role="presentation"><a href ui-sref="about">About</a></li>
           </ul>
         </nav>
         <h3 class="text-muted"><div class="logo-head"></div></h3>
       </div>
 
-      <div class="jumbotron">
-        <div class="logo"></div>
-        <p class="lead">Let you send your honor message to someone</p>
-        <p><a class="btn btn-lg btn-primary" href="#" role="button">Login with Facebook</a></p>
-      </div>
-
-      <div class="row marketing">
-        <div class="col-lg-6">
-          <h4><i class="fa fa-facebook-square"></i> Login with Facebook</h4>
-          <p>You can easily login with your facebook account</p>
-
-          <h4><i class="fa fa-user"></i> Find your honor friend</h4>
-          <p>You can easily browse and find your honor friends</p>
-
-          <h4><i class="fa fa-envelope-square"></i> Put yout message</h4>
-          <p>You can easily put message why you honor him/her</p>
-          
-        </div>
-
-        <div class="col-lg-6">
-          <h4><i class="fa fa-photo"></i> Choose photo</h4>
-          <p>You can easily upload or choose photo of your friend</p>
-
-          <h4><i class="fa fa-share-alt"></i> Share your honor</h4>
-          <p>You can easily share your honor message</p>
-
-        </div>
-      </div>
+      <div ui-view></div>
 
       <footer class="footer">
         <p>&copy; DarkBro Team 2014</p>
@@ -73,5 +48,14 @@
 
     </div> <!-- /container -->
 
+    <script src="js/jquery.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-ui-router.min.js"></script>
+    <script src="js/firebase.js"></script>
+    <script src="js/angularfire.min.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/controllers.js"></script>    
+    <script src="app/routes.js"></script>
+    <script src="app/services.js"></script>
   </body>
 </html>
