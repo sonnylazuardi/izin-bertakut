@@ -1,11 +1,8 @@
 <div class="row marketing">
-  <ul>
-    <li>Lorem ipsum dolor sit amet</li>
-    <li>Lorem ipsum dolor sit amet</li>
-    <li>Lorem ipsum dolor sit amet</li>
-    <li>Lorem ipsum dolor sit amet</li>
-    <li>Lorem ipsum dolor sit amet</li>
-    <li>Lorem ipsum dolor sit amet</li>
-    <li>Lorem ipsum dolor sit amet</li>
+  <input type="text" class="form-control" placeholder="Search Name" ng-model="search" ng-keypress="changed($event)">
+  <ul class="people">
+    <li ng-repeat="person in people">
+      <img ng-src="http://graph.facebook.com/{{person.id}}/picture?type=square" alt=""> {{person.name}}
+    </li>
   </ul>
 </div>

@@ -33,12 +33,15 @@ angular.module('BertakutApp.controllers', [])
     $scope.auth = Auth;
     $scope.user = $scope.auth.$getAuth();
     var access = $scope.user.facebook.accessToken;
-    $http.get('https://graph.facebook.com/v2.2/me/friends?access_token='+access).success(function(data) {
-        console.log(data);
-    });
-    $.getJSON('https://graph.facebook.com/v2.2/me/friends?access_token='+access, function(data) {
-        console.log(data);
-    });
+    $scope.search = '';
+    $scope.people = [];
+    $scope.changed = function(keyEvent) {
+        if (keyEvent.which === 13) {
+            $http.get('https://graph.facebook.com/v2.2/search?q='+$scope.search+'&type=user&access_token='+access).success(function(data) {
+                $scope.people = data.data;
+            });
+        }
+    }
 })
 
 .controller('AboutCtrl', function($scope, Auth) {
