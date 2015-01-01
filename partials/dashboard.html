@@ -1,8 +1,13 @@
 <div class="row marketing">
-  <input type="text" class="form-control" placeholder="Search Name" ng-model="search" ng-keypress="changed($event)">
-  <ul class="people">
-    <li ng-repeat="person in people">
-      <img ng-src="http://graph.facebook.com/{{person.id}}/picture?type=square" alt=""> {{person.name}}
-    </li>
-  </ul>
+    <input type="text" class="form-control" placeholder="Search Name" ng-model="search" ng-keypress="changed($event)">
+    <div class="loading" ng-show="loading">
+        <i class="fa fa-refresh fa-spin fa-3x"></i>
+    </div>
+    <ul class="people">
+        <li ng-repeat="person in people">
+            <a href ng-click="state.go('takut', {id: person.id, name: person.name})">
+                <img ng-src="http://graph.facebook.com/{{person.id}}/picture?type=square" alt=""> {{person.name}}
+            </a>
+        </li>
+    </ul>
 </div>

@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col-md-6 about">
+        <img ng-src="{{image}}" alt="">    
+    </div>
+    <div class="col-md-6">
+        <div>
+            From : 
+            <div>
+                <img ng-src="http://graph.facebook.com/{{takut.from.id}}/picture?type=square" alt="">
+                {{takut.from.name}}
+            </div>
+        </div>
+        <div>
+            To :
+            <div>
+                <img ng-src="http://graph.facebook.com/{{takut.to.id}}/picture?type=square" alt="">
+                {{takut.to.name}}
+            </div>
+        </div>
+        <div>
+            Message :
+            <div>
+                {{takut.message}}
+            </div>
+        </div>
+    </div>
+    
+
+</div>

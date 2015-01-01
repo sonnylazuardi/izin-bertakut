@@ -128,3 +128,35 @@ h4 i {
 .about img {
     width: 100%;
 }
+.nav {
+    padding-left: 50px;
+}
+
+.loading {
+    text-align: center;
+    padding: 20px;
+}
+
+ul.people {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul.people li {
+    padding: 10px;
+    border-bottom: 1px solid rgba(0,0,0,.15);
+}
+
+ul.people li a {
+    color: #777;
+    text-decoration: none;
+}
+
+ul.people li:hover {
+    background: rgba(0,0,0,.02);
+}
+
+ul.people li img {
+    margin-right: 10px;
+}

@@ -26,6 +26,12 @@ angular.module('BertakutApp.routes', [])
             controller: 'DashboardCtrl',
             resolve: require
         })
+        .state('dashboardsearch', {
+            url: '/dashboard/:search',
+            templateUrl: 'partials/dashboard.html',
+            controller: 'DashboardCtrl',
+            resolve: require
+        })
         .state('about', {
             url: '/about',
             templateUrl: 'partials/about.html',
@@ -35,6 +41,16 @@ angular.module('BertakutApp.routes', [])
             url: '/honor',
             templateUrl: 'partials/honor.html',
             controller: 'HonorCtrl'
+        })
+        .state('takut', {
+            url: '/takut/:id/:name',
+            templateUrl: 'partials/takut.html',
+            controller: 'TakutCtrl'
+        })
+        .state('share', {
+            url: '/share/:id',
+            templateUrl: 'partials/share.html',
+            controller: 'ShareCtrl'
         });
 
 });
