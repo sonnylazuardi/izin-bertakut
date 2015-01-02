@@ -1,11 +1,33 @@
-<div class="row marketing">
-  <ul>
-    <li>Lorem ipsum dolor sit amet</li>
-    <li>Lorem ipsum dolor sit amet</li>
-    <li>Lorem ipsum dolor sit amet</li>
-    <li>Lorem ipsum dolor sit amet</li>
-    <li>Lorem ipsum dolor sit amet</li>
-    <li>Lorem ipsum dolor sit amet</li>
-    <li>Lorem ipsum dolor sit amet</li>
-  </ul>
+<div class="row item-takut" ng-repeat="takut in takuts">
+    <div class="col-md-6 about">
+        <img ng-src="imgbase.php?id={{takut.$id}}" alt="">    
+    </div>
+    <div class="col-md-6">
+        <div>
+            From : 
+            <div>
+                <img ng-src="http://graph.facebook.com/{{takut.from.id}}/picture?type=square" alt="">
+                {{takut.from.name}}
+            </div>
+        </div>
+        <div>
+            To :
+            <div>
+                <img ng-src="http://graph.facebook.com/{{takut.to.id}}/picture?type=square" alt="">
+                {{takut.to.name}}
+            </div>
+        </div>
+        <div>
+            Message :
+            <div>
+                {{takut.message}}
+            </div>
+        </div>
+        <div>
+            Share :
+            <div>
+                <a facebook class="facebookShare" data-url='{{share_url(takut.$id)}}' data-shares='shares'>{{ shares }}</a>
+            </div>
+        </div>
+    </div>
 </div>

@@ -1,7 +1,10 @@
 angular.module('BertakutApp.routes', [])
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     $urlRouterProvider.otherwise('/home');
+    $locationProvider
+        .html5Mode(false)
+        .hashPrefix('!');
     var wait = {
         "currentAuth": ["Auth", function(Auth) {
             return Auth.$waitForAuth();

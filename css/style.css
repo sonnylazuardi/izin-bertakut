@@ -160,3 +160,9 @@ ul.people li:hover {
 ul.people li img {
     margin-right: 10px;
 }
+
+.item-takut {
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}

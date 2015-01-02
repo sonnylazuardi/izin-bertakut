@@ -751,15 +751,19 @@ angular.module('common.fabric', [
 		// Download Canvas
 		// ==============================================================
 		self.getCanvasData = function() {
-			var data = canvas.toDataURL('image/jpeg', 0.5);
+			var data = canvas.toDataURL({
+				width: canvas.getWidth(),
+				height: canvas.getHeight(),
+				multiplier: self.downloadMultipler
+			});
 
 			return data;
 		};
 
 		self.getCanvasBlob = function() {
 			var base64Data = self.getCanvasData();
-			var data = base64Data.replace('data:image/jpeg;base64,', '');
-			var blob = b64toBlob(data, 'image/jpeg');
+			var data = base64Data.replace('data:image/png;base64,', '');
+			var blob = b64toBlob(data, 'image/png');
 			var blobUrl = URL.createObjectURL(blob);
 
 			return blobUrl;
@@ -771,7 +775,7 @@ angular.module('common.fabric', [
 			var initialCanvasScale = self.canvasScale;
 			self.resetZoom();
 			
-			var data = canvas.toDataURL('image/jpeg', 0.5);
+			var data = self.getCanvasData();
 
 			self.canvasScale = initialCanvasScale;
 			self.setZoom();
@@ -787,14 +791,14 @@ angular.module('common.fabric', [
 			self.resetZoom();
 
 			// Click an artifical anchor to 'force' download.
-			// var link = document.createElement('a');
-			// var filename = name + '.jpg';
-			// link.download = filename;
-			// link.href = self.getCanvasBlob();
-			// link.click();
+			var link = document.createElement('a');
+			var filename = name + '.png';
+			link.download = filename;
+			link.href = self.getCanvasBlob();
+			link.click();
 
 			// Canvas2Image.saveAsImage(canvas, 180, 180, 'jpeg');
-			window.open(canvas.toDataURL('image/jpeg', 0.5));
+			// window.open(canvas.toDataURL('image/jpeg', 0.5));
 
 			self.canvasScale = initialCanvasScale;
 			self.setZoom();

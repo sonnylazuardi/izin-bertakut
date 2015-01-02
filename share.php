@@ -1,6 +1,6 @@
 <?php
     $id = $_GET['id'];
-    $image = file_get_contents('https://izin-bertakut.firebaseio.com/image/'.$id.'.json');
+    $site_url = 'http://izin-bertakut.sonnylab.com/';
     $data = file_get_contents('https://izin-bertakut.firebaseio.com/takut/'.$id.'.json');
     $takut = json_decode($data);
 
@@ -17,15 +17,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Izin Bertakut">
-    <meta property="og:description" content="Izin Bertakut">
+    <meta property="og:description" content="Izin Bertakut <?php echo $takut->message ?>">
     <meta name="author" content="DarkBro">
     <link rel="icon" href="favicon.ico">
     <meta property="og:title" content="Izin Bertakut <?php echo $takut->to->name ?>">
-    <meta property="og:site_name" content="<?php echo $takut->message ?>">
-    <meta property="og:image" content=<?php echo $image ?>>
+    <meta property="og:site_name" content="Izin Bertakut">
+    <meta property="og:url" content="<?php echo $site_url ?>#!/share/<?php echo $id ?>">
+    <meta property="og:image" content="<?php echo $site_url ?>imgbase.php?id=<?php echo $id ?>">
     <meta property="og:image:type" content="image/png">
-    <meta property="og:image:width" content="1024">
-    <meta property="og:image:height" content="1024">
+    <meta property="og:image:width" content="800">
+    <meta property="og:image:height" content="800">
     <title>Izin Bertakut</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
@@ -39,7 +40,7 @@
       <div>
           <div class="row">
             <div class="col-md-6 about">
-                <img src=<?php echo $image ?> alt="">    
+                <img src="imgbase.php?id=<?php echo $id ?>" alt="">    
             </div>
             <div class="col-md-6">
                 <div>
@@ -63,7 +64,7 @@
                     </div>
                 </div>
                 <div>
-                    <a href="index.html" class="btn btn-primary">Go to App</a>
+                    <a href="home.html" class="btn btn-primary">Go to App</a>
                 </div>
             </div>
         </div>

@@ -58,7 +58,11 @@ angular.module('BertakutApp.controllers', [])
 
 })
 
-.controller('HonorCtrl', function($scope, Auth) {
+.controller('HonorCtrl', function($scope, Auth, $stateParams, $state, $timeout, fbURL, Takut, shareURL) {
+    $scope.takuts = Takut;
+    $scope.share_url = function(id) {
+        return shareURL + '#!/share/' + id;
+    }
 
 })
 
@@ -168,17 +172,13 @@ angular.module('BertakutApp.controllers', [])
     });
 })
 
-.controller('ShareCtrl', function($scope, Auth, $stateParams, $state, Fabric, FabricConstants, Keypress, $timeout, fbURL, $http) {
+.controller('ShareCtrl', function($scope, Auth, $stateParams, $state, Fabric, FabricConstants, Keypress, $timeout, fbURL, $http, shareURL) {
     $scope.auth = Auth;
     $scope.user = $scope.auth.$getAuth();
     $scope.idx = $stateParams.id;
     $scope.takut = {};
-    $scope.image = '';
-
-
-    $http.get(fbURL + 'image/' + $scope.idx + '.json').success(function(data) {
-        $scope.image = data;
-    });
+    $scope.image_id = $stateParams.id;
+    $scope.share_url = shareURL + '#!/share/' + $scope.idx;
 
     $http.get(fbURL + 'takut/' + $scope.idx + '.json').success(function(data) {
         $scope.takut = data;
